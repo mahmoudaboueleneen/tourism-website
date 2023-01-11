@@ -1,6 +1,8 @@
 # Tourism-System
 Website for viewing and wishlisting various tourism sites.
 
+This website uses MongoDB for database management.
+
 To run:
   1. Open the project in integrated terminal.
   2. Run 'npm i' to install the node modules.
