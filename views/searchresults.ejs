@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            background-image: url("");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            -webkit-text-stroke: 1px blue;
+        }
+        li {
+            font-size: 18px;
+            color: darkblue;
+
+        }
+        .floated {
+        font-size: 25px;
+                float:left;
+                margin-right:50px;
+                color:darkslategray
+      }
+      .down{
+    
+        
+        position:absolute;
+        bottom:0px;
+        right:25%;
+        left:50%;
+        margin-left:-150px;
+        }
+        
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+        <a class="navbar-brand" style="color: rgb(191, 255, 161)">Search Results</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <form method="POST" action='/search' class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" name="Search" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="searchcont">
+        <ul>
+            <% for (let i = 0; i < searchRes.length; i++){ %>
+                <% if (searchRes[i] == 'empty') { %>
+                <p style="color:rgb(255, 255, 255);"> Destination not found. </p>
+                <% break; %>
+                <% } else if (searchRes[i] == 'inca trail to machu picchu') { %>
+                <br>
+                <li onclick="location.href = '/inca';" style="cursor:pointer;"> Inca Trail to Machu Picchu </li>
+                <% } else if (searchRes[i] == 'bali island') { %>
+                    <br>
+                <li onclick="location.href = '/bali';" style="cursor:pointer;"> Bali Island </li>
+                <% } else if (searchRes[i] == 'annapurna circuit') { %>
+                    <br>
+                <li onclick="location.href = '/annapurna';" style="cursor:pointer;"> Annapurna Circuit </li>
+                <% } else if (searchRes[i] == 'santorini island') { %>
+                    <br>
+                <li onclick="location.href = '/santorini';" style="cursor:pointer;"> Santorini Island </li>
+                <% } else if (searchRes[i] == 'paris') { %>
+                    <br>
+                <li onclick="location.href = '/paris';" style="cursor:pointer;"> Paris </li>
+                <% } else if (searchRes[i] == 'rome') { %>
+                    <br>
+                <li onclick="location.href = '/rome';" style="cursor:pointer;"> Rome </li>
+                <% } %>
+                <% } %>
+        </ul>
+    </div>
+    <div class="down">
+        <a  class="floated" href="/"><i class="fa fa-sign-out" style="font-size:28px;color:darkslategray"></i> Sign Out</a>
+        <a  class="floated" href="/home"><i class="fa fa-home" aria-hidden="true"></i> Home Page</a>
+    </div>
+</body>
+</html>
