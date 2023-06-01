@@ -1,4 +1,4 @@
-# Tourism-System
+# TourismSystem
 Website for viewing and wishlisting various tourism sites.
 
 This website uses MongoDB for database management.
